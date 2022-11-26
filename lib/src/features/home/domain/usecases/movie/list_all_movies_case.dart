@@ -2,8 +2,8 @@ import 'package:challenge_marvel_studio/src/features/home/domain/entities/errors
 import 'package:challenge_marvel_studio/src/features/home/domain/entities/movie_entity.dart';
 import 'package:dartz/dartz.dart';
 
-import './i_list_all_movies_case.dart';
-import '../../../repositories/i_movie_repository.dart';
+import '../../repositories/i_movie_repository.dart';
+import 'interfaces/i_list_all_movies_case.dart';
 
 class ListAllMoviesCase implements IListAllMoviesCase {
   final IMovieRepository iMovieRepository;
