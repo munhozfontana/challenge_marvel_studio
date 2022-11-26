@@ -30,7 +30,7 @@ void main() {
       ]),
     );
 
-    var res = (await sut());
+    var res = await sut();
 
     expect(res, isA<Right>());
     expect(res.fold((l) => l, (r) => r), hasLength(1));
