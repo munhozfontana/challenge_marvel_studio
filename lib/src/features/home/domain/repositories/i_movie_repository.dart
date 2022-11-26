@@ -2,6 +2,6 @@ import 'package:challenge_marvel_studio/src/features/home/domain/entities/errors
 import 'package:challenge_marvel_studio/src/features/home/domain/entities/movie_entity.dart';
 import 'package:dartz/dartz.dart';
 
-abstract class IListAllMoviesCase {
-  Future<Either<IBusinessException, List<MovieEntity>>> call();
+abstract class IMovieRepository {
+  Future<Either<IBusinessException, List<MovieEntity>>> listAll();
 }
