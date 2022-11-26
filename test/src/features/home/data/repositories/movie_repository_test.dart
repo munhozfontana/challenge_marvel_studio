@@ -12,13 +12,13 @@ import '../../../../../fixtures/fixture_reader.dart';
 class MockIMovieExternal extends Mock implements IMovieExternal {}
 
 void main() {
-  late MovieRepository movieRepository;
+  late MovieRepository sut;
   late MockIMovieExternal mockIMovieExternal;
 
   setUp(() {
     mockIMovieExternal = MockIMovieExternal();
 
-    movieRepository = MovieRepository(iMovieExternal: mockIMovieExternal);
+    sut = MovieRepository(iMovieExternal: mockIMovieExternal);
   });
 
   test('should list all movies with no errors', () async {
@@ -27,7 +27,7 @@ void main() {
     when(() => mockIMovieExternal.listAll())
         .thenAnswer((_) async => List<Map<String, dynamic>>.from(jsonResponse));
 
-    var res = await movieRepository.listAll();
+    var res = await sut.listAll();
 
     expect(res, isA<Right>());
     expect(res.fold((l) => l, (r) => r), hasLength(24));
@@ -35,7 +35,7 @@ void main() {
   test('should answer error Left with error ', () async {
     when(() => mockIMovieExternal.listAll()).thenThrow(ExternalException());
 
-    var res = await movieRepository.listAll();
+    var res = await sut.listAll();
 
     expect(res, isA<Left>());
   });

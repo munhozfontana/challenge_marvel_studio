@@ -8,13 +8,13 @@ import 'package:mocktail/mocktail.dart';
 class MockIMovieRepository extends Mock implements IMovieRepository {}
 
 void main() {
-  late ListAllMoviesCase listAllMoviesCase;
+  late ListAllMoviesCase sut;
   late MockIMovieRepository mockIMovieRepository;
 
   setUp(() {
     mockIMovieRepository = MockIMovieRepository();
 
-    listAllMoviesCase = ListAllMoviesCase(
+    sut = ListAllMoviesCase(
       iMovieRepository: mockIMovieRepository,
     );
   });
@@ -30,7 +30,7 @@ void main() {
       ]),
     );
 
-    var res = (await listAllMoviesCase());
+    var res = (await sut());
 
     expect(res, isA<Right>());
     expect(res.fold((l) => l, (r) => r), hasLength(1));
