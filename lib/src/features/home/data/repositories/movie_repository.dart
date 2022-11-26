@@ -18,9 +18,9 @@ class MovieRepository implements IMovieRepository {
     try {
       final list = await iMovieExternal.listAll();
 
-      final comments = list.map(MovieAdapter.fromJson).toList();
+      final movies = list.map(MovieAdapter.fromJson).toList();
 
-      return right(comments);
+      return right(movies);
     } on IBusinessException catch (e) {
       return left(e);
     }
