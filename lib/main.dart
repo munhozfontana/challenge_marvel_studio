@@ -1,9 +1,7 @@
 import 'package:challenge_marvel_studio/src/core/injection.dart';
-import 'package:challenge_marvel_studio/src/features/home/presenter/page/movie_page.dart';
-import 'package:challenge_marvel_studio/src/features/home/presenter/stores/movie_cubit.dart';
+import 'package:challenge_marvel_studio/src/core/routing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   setup();
@@ -28,11 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: themeData,
-      // home: const SplashPage(),
-      home: BlocProvider(
-        create: (_) => MovieCubit(iListAllMoviesCase: inject()),
-        child: const MoviePage(),
-      ),
+      routes: routing,
     );
   }
 }
