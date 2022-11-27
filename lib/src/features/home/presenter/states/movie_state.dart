@@ -1,7 +1,13 @@
 import 'package:challenge_marvel_studio/src/features/home/domain/entities/movie_entity.dart';
 import 'package:equatable/equatable.dart';
 
-abstract class MovieState extends Equatable {}
+abstract class MovieState extends Equatable {
+  final List<MovieEntity>? movies;
+
+  const MovieState({
+    this.movies,
+  });
+}
 
 class InitialMovieState extends MovieState {
   @override
@@ -14,12 +20,10 @@ class LoadingMovieState extends MovieState {
 }
 
 class LoadedMovieState extends MovieState {
-  LoadedMovieState(this.movies);
-
-  final List<MovieEntity> movies;
+  const LoadedMovieState({super.movies});
 
   @override
-  List<Object> get props => [movies];
+  List<Object> get props => [];
 }
 
 class ErrorMovieState extends MovieState {
