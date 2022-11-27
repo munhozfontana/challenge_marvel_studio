@@ -21,11 +21,6 @@ abstract class IHttpAdapter {
     Map<String, dynamic>? headers,
     Map<String, dynamic>? queryParameters,
   });
-  Future<HttpDownalod> downloadHttp(
-    String? url, {
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? queryParameters,
-  });
 }
 
 class HttpResponse {
@@ -37,17 +32,5 @@ class HttpResponse {
 
   int? statusCode;
   String? body;
-  Map? header;
-}
-
-class HttpDownalod {
-  HttpDownalod({
-    this.statusCode,
-    this.body,
-    this.header,
-  });
-
-  int? statusCode;
-  List<int>? body;
   Map? header;
 }

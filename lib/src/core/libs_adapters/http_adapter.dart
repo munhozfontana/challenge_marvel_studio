@@ -69,37 +69,12 @@ class HttpAdapter implements IHttpAdapter {
 
     return _mackObj(libResponse);
   }
-
-  @override
-  Future<HttpDownalod> downloadHttp(
-    String? url, {
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final libResponse = await Dio().get(
-      url!,
-      options: Options(
-        responseType: ResponseType.bytes,
-        followRedirects: false,
-        receiveTimeout: 0,
-      ),
-    );
-    return _mackObjDownload(libResponse);
-  }
 }
 
 HttpResponse _mackObj(Response response) {
   return HttpResponse(
     statusCode: response.statusCode,
     body: jsonEncode(response.data),
-    header: response.requestOptions.headers,
-  );
-}
-
-HttpDownalod _mackObjDownload(Response response) {
-  return HttpDownalod(
-    statusCode: response.statusCode,
-    body: response.data as List<int>,
     header: response.requestOptions.headers,
   );
 }
