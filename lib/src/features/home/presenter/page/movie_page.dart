@@ -19,16 +19,18 @@ class _MoviePageState extends State<MoviePage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<MovieCubit, MovieState>(
-      builder: (context, state) => Scaffold(
-        body: Center(
-          child: Visibility(
-            visible: state is LoadedMovieState,
-            replacement: const CircularProgressIndicator(),
-            child: const Text(''),
-          ),
-        ),
-      ),
-    );
+    return Scaffold(body: BlocBuilder<MovieCubit, MovieState>(
+      builder: (context, state) {
+        if (state is LoadedMovieState) {
+          return Center(
+            child: Text(state.movies.length.toString()),
+          );
+        }
+
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    ));
   }
 }

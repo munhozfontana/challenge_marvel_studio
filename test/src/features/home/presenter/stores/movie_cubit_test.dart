@@ -32,7 +32,8 @@ void main() {
 
     await sut.loadAllMovies();
 
-    expect(sut.state.movies, hasLength(1));
+    expect(sut.state, isA<LoadedMovieState>());
+    expect((sut.state as LoadedMovieState).movies, hasLength(1));
   });
 
   test('should emit event of error', () async {
