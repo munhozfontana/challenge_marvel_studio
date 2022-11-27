@@ -1,6 +1,7 @@
 import 'package:challenge_marvel_studio/src/features/home/domain/entities/errors/i_business_exception.dart';
 import 'package:challenge_marvel_studio/src/features/home/domain/entities/movie_entity.dart';
 import 'package:challenge_marvel_studio/src/features/home/domain/usecases/movie/interfaces/i_list_all_movies_case.dart';
+import 'package:challenge_marvel_studio/src/features/home/presenter/states/movie_state.dart';
 import 'package:challenge_marvel_studio/src/features/home/presenter/stores/movie_cubit.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -41,6 +42,6 @@ void main() {
 
     await sut.loadAllMovies();
 
-    expect(sut.state.movies, hasLength(1));
+    expect(sut.state, isA<ErrorMovieState>());
   });
 }

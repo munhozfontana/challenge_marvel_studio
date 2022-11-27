@@ -1,9 +1,11 @@
+import 'package:challenge_marvel_studio/src/core/injection.dart';
 import 'package:challenge_marvel_studio/src/features/home/presenter/page/movie_page.dart';
 import 'package:challenge_marvel_studio/src/features/home/presenter/stores/movie_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
+  setup();
   runApp(const MyApp());
 }
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: BlocProvider(
-        create: (_) => MovieCubit(),
+        create: (_) => MovieCubit(iListAllMoviesCase: inject()),
         child: const MoviePage(),
       ),
     );

@@ -4,9 +4,7 @@ import 'package:equatable/equatable.dart';
 abstract class MovieState extends Equatable {
   final List<MovieEntity>? movies;
 
-  const MovieState({
-    this.movies,
-  });
+  const MovieState({this.movies});
 }
 
 class InitialMovieState extends MovieState {
