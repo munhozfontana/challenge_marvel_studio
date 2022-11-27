@@ -89,11 +89,23 @@ class _MoviePageState extends State<MoviePage> {
       highlightColor: Colors.white,
       child: whenLoadedMovie([
         MovieEntity(
-            id: '0', releaseYearDate: 0, thumbnailUrl: '', titleName: ''),
+          id: '0',
+          releaseYearDate: 0,
+          thumbnailUrl: '',
+          titleName: '',
+        ),
         MovieEntity(
-            id: '0', releaseYearDate: 0, thumbnailUrl: '', titleName: ''),
+          id: '0',
+          releaseYearDate: 0,
+          thumbnailUrl: '',
+          titleName: '',
+        ),
         MovieEntity(
-            id: '0', releaseYearDate: 0, thumbnailUrl: '', titleName: ''),
+          id: '0',
+          releaseYearDate: 0,
+          thumbnailUrl: '',
+          titleName: '',
+        ),
       ]),
     );
   }
