@@ -1,6 +1,9 @@
 import 'package:challenge_marvel_studio/src/core/injection.dart';
-import 'package:challenge_marvel_studio/src/features/splash/presenter/page/splash_page.dart';
+import 'package:challenge_marvel_studio/src/features/home/presenter/page/movie_page.dart';
+import 'package:challenge_marvel_studio/src/features/home/presenter/stores/movie_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   setup();
@@ -12,16 +15,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+    var themeData = ThemeData(
+      primarySwatch: Colors.blue,
+      appBarTheme: const AppBarTheme(
+        centerTitle: true,
+        color: Colors.transparent,
+        elevation: 0,
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: themeData,
+      // home: const SplashPage(),
+      home: BlocProvider(
+        create: (_) => MovieCubit(iListAllMoviesCase: inject()),
+        child: const MoviePage(),
       ),
-      home: const SplashPage(),
-      // home: BlocProvider(
-      //   create: (_) => MovieCubit(iListAllMoviesCase: inject()),
-      //   child: const MoviePage(),
-      // ),
     );
   }
 }

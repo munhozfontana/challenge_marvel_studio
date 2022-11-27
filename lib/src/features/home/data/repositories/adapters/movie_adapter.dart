@@ -7,7 +7,7 @@ class MovieAdapter {
     return MovieEntity(
       id: (data['id'] as int).toString(),
       releaseYearDate: int.parse(releaseYearDate),
-      thumbnailUrl: (data['backdrop_path'] as String),
+      thumbnailUrl: (data['poster_path'] as String),
       titleName: (data['title'] as String),
     );
   }

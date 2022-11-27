@@ -13,7 +13,6 @@ class SplashPage extends StatelessWidget {
       body: Center(
         child: SvgPicture.asset(
           'images/logo.svg',
-          semanticsLabel: 'Acme Logo',
           width: size.width * .42,
         ),
       ),
