@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../domain/entities/movie_entity.dart';
 
@@ -57,7 +58,34 @@ class _MoviePageState extends State<MoviePage> {
           width: size.width * .30,
         ),
       ),
-      drawer: const Drawer(),
+      drawer: Drawer(
+        width: 60,
+        elevation: 2,
+        backgroundColor: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Column(
+            children: [
+              GestureDetector(
+                onTap: () => _launchURL('https://github.com/munhozfontana'),
+                child: const Icon(
+                  Icons.logo_dev_outlined,
+                  size: 26,
+                ),
+              ),
+              const SizedBox(height: 12),
+              GestureDetector(
+                onTap: () => _launchURL(
+                    'https://www.linkedin.com/in/luis-fernando-munhoz-fontana-neto-652aa88a/'),
+                child: const Icon(
+                  Icons.link,
+                  size: 26,
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
       extendBodyBehindAppBar: true,
       body: Container(
         decoration: imageDecoration,
@@ -161,5 +189,13 @@ class _MoviePageState extends State<MoviePage> {
         );
       },
     );
+  }
+
+  _launchURL(String url) async {
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
