@@ -13,7 +13,7 @@ class MovieCubit extends Cubit<MovieState> {
     emit(LoadingMovieState());
 
     (await iListAllMoviesCase()).fold(
-      (l) => emit(ErrorMovieState()),
+      (l) => emit(ErrorMovieState(error: l.message!)),
       (r) => emit(LoadedMovieState(movies: r)),
     );
   }

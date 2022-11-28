@@ -17,6 +17,7 @@ class LoadingMovieState extends MovieState {
 
 class LoadedMovieState extends MovieState {
   final List<MovieEntity> movies;
+
   const LoadedMovieState({
     required this.movies,
   });
@@ -26,6 +27,12 @@ class LoadedMovieState extends MovieState {
 }
 
 class ErrorMovieState extends MovieState {
+  final String error;
+
+  const ErrorMovieState({
+    required this.error,
+  });
+
   @override
   List<Object> get props => [];
 }

@@ -73,6 +73,17 @@ class _MoviePageState extends State<MoviePage> {
                 return whenLoadedMovie(state.movies);
               }
 
+              if (state is ErrorMovieState) {
+                return Center(
+                  child: Text(
+                    "Error: ${state.error}",
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                );
+              }
+
               return const Center(
                 child: CircularProgressIndicator(),
               );
