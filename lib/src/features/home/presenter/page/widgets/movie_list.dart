@@ -23,7 +23,7 @@ class MovieList extends StatelessWidget {
         itemBuilder: (context, index) {
           var movie = movies[index];
 
-          return InkWell(
+          return GestureDetector(
             onTap: () => onTap?.call(movie),
             child: SizedBox(
               width: size.width * .32,
