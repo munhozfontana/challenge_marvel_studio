@@ -49,20 +49,24 @@ class MovieList extends StatelessWidget {
                               Radius.circular(14),
                             ),
                             child: movie.thumbnailUrl.isNotEmpty
-                                ? Image.network(
-                                    movie.thumbnailUrl,
-                                    fit: BoxFit.cover,
-                                    loadingBuilder: (context, child, load) {
-                                      if (load == null) return child;
-                                      return Center(
-                                        child: CircularProgressIndicator(
-                                          value: load.expectedTotalBytes != null
-                                              ? load.cumulativeBytesLoaded /
-                                                  load.expectedTotalBytes!
-                                              : null,
-                                        ),
-                                      );
-                                    },
+                                ? Hero(
+                                    tag: 'detail ${movie.id}',
+                                    child: Image.network(
+                                      movie.thumbnailUrl,
+                                      fit: BoxFit.cover,
+                                      loadingBuilder: (context, child, load) {
+                                        if (load == null) return child;
+                                        return Center(
+                                          child: CircularProgressIndicator(
+                                            value: load.expectedTotalBytes !=
+                                                    null
+                                                ? load.cumulativeBytesLoaded /
+                                                    load.expectedTotalBytes!
+                                                : null,
+                                          ),
+                                        );
+                                      },
+                                    ),
                                   )
                                 : Container(
                                     width: double.maxFinite,
