@@ -18,20 +18,41 @@ class WatchPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Hero(
-              tag: 'detail ${movie.id}',
-              child: Image.network(
-                movie.thumbnailUrl,
-                width: size.width,
-                alignment: Alignment.topCenter,
-                height: size.height * .4,
-                fit: BoxFit.cover,
+            SizedBox(
+              height: size.height * .4,
+              child: Hero(
+                tag: 'detail ${movie.id}',
+                child: Stack(
+                  children: [
+                    Image.network(
+                      movie.thumbnailUrl,
+                      alignment: Alignment.topCenter,
+                      fit: BoxFit.cover,
+                      width: size.width,
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey.withOpacity(.4),
+                        child: const Icon(
+                          Icons.play_arrow,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             const SizedBox(height: 8),
-            SvgPicture.asset(
-              'images/logo_white.svg',
-              width: size.width * .20,
+            Stack(
+              children: [
+                SvgPicture.asset(
+                  'images/logo_white.svg',
+                  width: size.width * .20,
+                ),
+              ],
             ),
             const SizedBox(height: 8),
             Text(
