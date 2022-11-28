@@ -134,7 +134,14 @@ class _MoviePageState extends State<MoviePage> {
                     const Spacer(),
                     const SubTitle(),
                     const SizedBox(height: 12),
-                    MovieList(movies: movies),
+                    MovieList(
+                      movies: movies,
+                      onTap: (movie) => Navigator.pushNamed(
+                        context,
+                        '/watch',
+                        arguments: movie,
+                      ),
+                    ),
                   ],
                 ),
               ),

@@ -39,6 +39,7 @@ dependencies:
   # External
   dio: ^4.0.6
 
+  # Required Libs
   dartz: ^0.10.1
   equatable: ^2.0.5
   get: ^4.6.5
@@ -48,6 +49,9 @@ dependencies:
   # UI Libs
   flutter_svg: ^1.1.6
   shimmer: ^2.0.0
+
+  #Utils Libs
+  flutter_lorem: ^2.0.0
 
 dev_dependencies:
   flutter_test:
