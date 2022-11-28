@@ -5,10 +5,12 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('splash page should load with no errors', (tester) async {
-    await tester.pumpWidget(const MaterialApp(home: SplashPage()));
+    await tester.runAsync(() async {
+      await tester.pumpWidget(const MaterialApp(home: SplashPage()));
 
-    expect(find.byType(Center), findsOneWidget);
-    expect(find.byType(SvgPicture), findsOneWidget);
-    expect(find.byType(Scaffold), findsOneWidget);
+      expect(find.byType(Center), findsOneWidget);
+      expect(find.byType(SvgPicture), findsOneWidget);
+      expect(find.byType(Scaffold), findsOneWidget);
+    });
   });
 }
