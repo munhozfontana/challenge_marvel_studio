@@ -24,12 +24,14 @@ class WatchPage extends StatelessWidget {
                 tag: 'detail ${movie.id}',
                 child: Stack(
                   children: [
-                    Image.network(
-                      movie.thumbnailUrl,
-                      alignment: Alignment.topCenter,
-                      fit: BoxFit.cover,
-                      width: size.width,
-                    ),
+                    movie.thumbnailUrl.isNotEmpty
+                        ? Image.network(
+                            movie.thumbnailUrl,
+                            alignment: Alignment.topCenter,
+                            fit: BoxFit.cover,
+                            width: size.width,
+                          )
+                        : const SizedBox.shrink(),
                     Align(
                       alignment: Alignment.center,
                       child: CircleAvatar(
