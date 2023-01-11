@@ -38,6 +38,7 @@ dependencies:
 
   # External
   dio: ^4.0.6
+  golden_toolkit: ^0.13.0
 
   # Required Libs
   dartz: ^0.10.1

@@ -93,10 +93,6 @@ class _MoviePageState extends State<MoviePage> {
           decoration: gradientDecoration,
           child: BlocBuilder<MovieCubit, MovieState>(
             builder: (context, state) {
-              if (state is LoadingMovieState) {
-                return whenLoadingMovie();
-              }
-
               if (state is LoadedMovieState) {
                 return whenLoadedMovie(state.movies);
               }
@@ -112,9 +108,7 @@ class _MoviePageState extends State<MoviePage> {
                 );
               }
 
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
+              return whenLoadingMovie();
             },
           ),
         ),
