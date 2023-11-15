@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": "2f81a686-7531-11e8-86e5-f0d5bf731f68",
+      "item": "Keychain Phone Charger",
+      "price": "29.99",
+      "description": "This keychain lightning charger comes with a plug so you’ll be able to charge anywhere with an outlet. Great for the traveller on the go who always needs their phone."
+    },
+    {
+      "id": "39ac2118-7531-11e8-86e5-f0d5bf731f68",
+      "item": "Coffee Mug",
+      "price": "11.80",
+      "description": "Classic white coffee mug."
+    },
+    {
+      "id": "4262b2c2-7531-11e8-86e5-f0d5bf731f68",
+      "item": "Coffee Mug",
+      "price": "11.80",
+      "description": "Classic red coffee mug."
+    },
+    {
+      "item": "Coffee Mug",
+      "price": "11.80",
+      "description": "Classic red coffee mug.",
+      "id": "0yadJ4n"
+    },
+    {
+      "item": "Coffee Mug",
+      "price": "11.80",
+      "description": "Classic red coffee mug.",
+      "id": "ZeOqu5k"
+    },
+    {
+      "item": "Coffee Mug",
+      "price": "11.80",
+      "description": "Classic red coffee mug.",
+      "id": "ZrM6EVj"
+    },
+    {
+      "item": "Coffee Mug",
+      "price": "11.80",
+      "description": "Classic red coffee mug.",
+      "id": "Rf4rmjB"
+    },
+    {
+      "item": "Coffee Mug",
+      "price": "11.80",
+      "description": "Classic red coffee mug.",
+      "id": "mI0ysIP"
+    }
+  ],
+  "carts": [],
+  "items": []
+}
